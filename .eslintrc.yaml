@@ -1,0 +1,27 @@
+extends: airbnb
+plugins:
+- import
+env:
+  browser: false
+  node: true
+  amd: true
+  es6: true
+  mocha: true
+parser: babel-eslint
+rules:
+  linebreak-style: ["error", "unix"]
+  semi: ["error", "never"]
+  no-param-reassign: ["error", {"props": true}]
+  comma-dangle: ["warn", "always-multiline"]
+  max-len: ["warn", 100, 4, {"ignoreUrls": true, "ignoreComments": true}]
+  no-plusplus: ["warn"]
+  global-require: ["warn"]
+  import/no-unresolved: ["warn"]
+  import/no-named-as-default: ["warn"]
+  import/extensions: ["off"]
+  import/prefer-default-export: ["warn"]
+  react/jsx-filename-extension: ["warn", { "extensions": [".js", ".jsx"] }]
+settings:
+  import/resolver:
+    webpack:
+      config: 'webpack.config.js'

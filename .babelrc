@@ -1,0 +1,43 @@
+{
+  "presets": ["es2015", "react", "stage-0"],
+  "parserOpts": {
+    "plugins": [
+      "jsx",
+      "objectRestSpread",
+      "flow"
+    ]
+  },
+  "plugins": [
+    "transform-object-rest-spread",
+    "transform-flow-strip-types",
+    "transform-runtime",
+    "add-module-exports",
+    "transform-decorators-legacy",
+    "transform-react-display-name",
+    "react-hot-loader/babel"
+  ],
+  "env": {
+    "development": {
+      "plugins": [
+        "typecheck",
+        [
+          "react-transform",
+          {
+            "transforms": [
+              {
+                "transform": "react-transform-catch-errors",
+                "imports": ["react", "redbox-react"]
+              }
+            ]
+          }
+        ]
+      ]
+    },
+    "test": {
+      "plugins": ["rewire"]
+    },
+    "coverage": {
+      "plugins": ["istanbul", "rewire"]
+    }
+  }
+}
